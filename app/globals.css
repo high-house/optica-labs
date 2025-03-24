@@ -9,6 +9,7 @@
   --animate-third: moveInCircle 40s linear infinite;
   --animate-fourth: moveHorizontal 40s ease infinite;
   --animate-fifth: moveInCircle 20s ease infinite;
+  --color-primary: #52CBBE;
   --font-geist: var(--font-geist);
 
   @keyframes moveHorizontal {

@@ -8,6 +8,7 @@ import Podcast from '@/components/Podcast'
 import NewsArticles from '@/components/news_and_articles'
 import Resources from '@/components/resources'
 import ContactUs from '@/components/ContactUs'
+import { TeamMap } from '@/components/TeamMap';
 
 function Page() {
     const [showButton, setShowButton] = useState(false);
@@ -30,6 +31,7 @@ function Page() {
             </button>
 
             <Landing />
+            <TeamMap />
             <Team />
             <Quotes />
             <Podcast />
