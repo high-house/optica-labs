@@ -13,28 +13,21 @@ function Page() {
     const [showButton, setShowButton] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => {
-            setShowButton(window.scrollY > window.innerHeight);
-        };
-
+        const handleScroll = () => setShowButton(window.scrollY > window.innerHeight / 2);
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    };
+    const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
     return (
-        <div className="overflow-x-hidden font-geist">
-            {showButton && (
-                <button 
-                    className="w-12 z-[9999] h-12 fixed bottom-10 right-10 bg-[#52CBBE] text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
-                    onClick={scrollToTop}
-                >
-                    <IconArrowUp size={28} />
-                </button>
-            )}
+        <div className="font-geist overflow-x-hidden">
+            <button 
+                className={`fixed bottom-10 right-10 z-[9999] flex h-12 w-12 items-center justify-center rounded-full bg-[#52CBBE] text-white shadow-lg transition-all duration-300 hover:scale-110 ${showButton ? "opacity-100" : "opacity-0"} transition-opacity`}
+                onClick={scrollToTop}
+            >
+                <IconArrowUp size={28} />
+            </button>
 
             <Landing />
             <Team />
