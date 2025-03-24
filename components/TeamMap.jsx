@@ -8,7 +8,7 @@ const scriptFont = Dancing_Script({ subsets: ['latin'], weight: ['400', '700'] }
 
 export const TeamMap = () => {
     return (
-        <div className="font-geist text-primary relative isolate h-[135vh] w-full bg-[#001D1B] _p-10">
+        <div id="team" className="font-geist text-primary relative isolate h-[135vh] w-full bg-[#001D1B] _p-10">
             <div className={`${scriptFont.className} z-10 w-full text-center text-6xl font-medium text-[#E8DFE7] pt-20 _font-semibold`}>Our Team</div>
             <TeamCard src={"/team/aiony (1).jpg"} x={250} y={200} left={true}/>
             <TeamCard src={"/team/aiony (1).jpg"} x={750} y={480} left={false}/>
@@ -144,13 +144,13 @@ const SquigglyLine = ({ path, viewBox }) => {
                 <path
                     ref={pathRef}
                     d={path}
-                    stroke="#fff"
-                    strokeWidth="8"
+                    stroke=" #FFFFFF66"
+                    strokeWidth="2"
                     fill="none"
                     style={{
                         strokeDasharray: `${length}, ${totalLength}`,
                     }}
-                    className={`transition-all ease-out`}
+                    className={`transition-all ease-out duration-[1s]`}
                 />
             </svg>
         </div>
