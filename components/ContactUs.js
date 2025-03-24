@@ -11,6 +11,9 @@ function ContactUs() {
 
         <div className='w-full h-full flex flex-col relative'>
             <LampDemo/>
+            <div>
+                abc
+            </div>
         </div>
     </div>
   )
