@@ -24,12 +24,12 @@ export default function NewsArticles() {
   ];
 
   return (
-    <div className="relative flex items-center justify-center min-h-screen w-full bg-black text-[#D0DCE2] px-6 py-12">
-      <div className="absolute inset-0">
+    <div className="relative flex items-center justify-center min-h-screen w-full text-[#D0DCE2] px-6 py-12">
+      {/* <div className="absolute inset-0">
         <BackgroundGradientAnimation />
-      </div>
+      </div> */}
       <div className="relative z-10 w-full max-w-3xl flex flex-col items-center text-center">
-        <h2 className={`text-4xl sm:text-5xl mb-8 text-[#E8DFE7] ${scriptFont.className}`}>
+        <h2 className={`text-6xl sm:text-5xl mb-8 text-[#E8DFE7] ${scriptFont.className}`}>
           News & Articles
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">

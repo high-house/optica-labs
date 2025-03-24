@@ -1,12 +1,15 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { Dancing_Script } from 'next/font/google';
+import { useSearchParams } from "next/navigation";
 // import { LampDemo } from './LampDemo';
 const scriptFont = Dancing_Script({ subsets: ['latin'], weight: ['400', '700'] });
 
 export function LampDemo() {
+ 
+
   return (
     <LampContainer>
       <motion.h1
@@ -26,9 +29,21 @@ export function LampDemo() {
 }
 
 export const LampContainer = ({
+  
   children,
   className,
 }) => {
+
+  const [small,setSmall]=useState(false)
+
+  useEffect(()=>{
+    if(window.innerWidth < 750)
+    {
+      setSmall(true)
+    }else{
+      setSmall(false)
+    }
+  },[])
   return (
     <div
       className={cn(
@@ -36,8 +51,8 @@ export const LampContainer = ({
         className
       )}
     >
-    <h2 className={`mt-10 text-5xl text-[#CBC6C6] text-center z-10 absolute top-10 left-1/2 -translate-x-1/2 ${scriptFont.className}`}>Contact Us</h2>
-      <div className="relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-0 ">
+    <h2 className={`mt-10 lg:text-5xl text-4xl text-[#CBC6C6] text-center z-10 absolute lg:top-10 top-2 left-1/2 -translate-x-1/2 lg:w-auto w-[25rem] _bg-[red] ${scriptFont.className}`}>Contact Us</h2>
+      <div className="relative flex w-full flex-1 scale-y-125 lg:-translate-y-0 translate-y-[5rem] items-center justify-center isolate z-0 ">
         <motion.div
           initial={{ opacity: 0.5, width: "15rem" }}
           whileInView={{ opacity: 1, width: "30rem" }}
@@ -85,7 +100,7 @@ export const LampContainer = ({
         ></motion.div>
         <motion.div
           initial={{ width: "15rem" }}
-          whileInView={{ width: "30rem" }}
+          whileInView={{ width: small ? "20rem" : "30rem" }}
           transition={{
             delay: 0.3,
             duration: 0.8,

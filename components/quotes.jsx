@@ -60,7 +60,7 @@ const Quotes = () => {
         </div>
 
       </div>
-      <BackgroundGradientAnimation />
+      {/* <BackgroundGradientAnimation /> */}
     </div>
   );
 };

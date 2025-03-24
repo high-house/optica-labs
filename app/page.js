@@ -9,6 +9,7 @@ import NewsArticles from '@/components/news_and_articles'
 import Resources from '@/components/resources'
 import ContactUs from '@/components/ContactUs'
 import { TeamMap } from '@/components/TeamMap';
+import { BackgroundGradientAnimation } from '@/components/ui/background-gradient-animation';
 
 function Page() {
     const [showButton, setShowButton] = useState(false);
@@ -22,17 +23,19 @@ function Page() {
     const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
     return (
-        <div className="font-geist overflow-x-hidden">
+        <div className="font-geist overflow-x-hidden relative">
             <button 
                 className={`fixed bottom-10 right-10 z-[9999] flex h-12 w-12 items-center justify-center rounded-full bg-[#52CBBE] text-white shadow-lg transition-all duration-300 hover:scale-110 ${showButton ? "opacity-100" : "opacity-0"} transition-opacity`}
                 onClick={scrollToTop}
             >
                 <IconArrowUp size={28} />
             </button>
-
+            <div className='max-w-screen h-screen fixed top-0 left-0'>
+            <BackgroundGradientAnimation/>
+      </div>
             <Landing />
             <TeamMap />
-            <Team />
+            {/* <Team /> */}
             <Quotes />
             <Podcast />
             <NewsArticles />
