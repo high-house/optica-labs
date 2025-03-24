@@ -1,8 +1,7 @@
 @import "tailwindcss";
 :root {
-  font-family: var(--font-noto-serif), serif;
+  font-family: var(--font-geist), serif;
 }
-
 
 @theme inline {
   --animate-first: moveVertical 30s ease infinite;
@@ -10,6 +9,7 @@
   --animate-third: moveInCircle 40s linear infinite;
   --animate-fourth: moveHorizontal 40s ease infinite;
   --animate-fifth: moveInCircle 20s ease infinite;
+  --font-geist: var(--font-geist);
 
   @keyframes moveHorizontal {
     0% {
